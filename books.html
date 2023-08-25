@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fantasy Novels - Browse Books">
+    <meta name="keywords" content="fantasy novels, books, reading">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Novels - Browse Books</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <div id="main_title">
+            <img src="novelslogo.jpeg" alt="Fantasy Novels Logo" id="logo" />
+            <h1>Fantasy Novels</h1>
+            <h2>Explore Enchanting Worlds</h2>
+        </div>
+        <nav class="head">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="ratings.html">Ratings & Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Featured Books</h2>
+            <select id="genreDropdown" style="width: 90px;">
+                <option value="Fantasy">Fantasy</option>
+                <option value="Action">Action</option>
+            </select>
+            <div class="book-list" id="bookList">
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2023 Fantasy Novels. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const genreDropdown = document.getElementById('genreDropdown');
+        const bookList = document.getElementById('bookList');
+
+        genreDropdown.addEventListener('change', function() {
+            const selectedGenre = genreDropdown.value;
+            bookList.innerHTML = '';
+
+            if (selectedGenre === 'Fantasy') {
+                bookList.innerHTML = `
+                    <div class="book">
+                        <img src="book1.jpeg" alt="Book 1" id="fantasy1">
+                        <h3>Dark Emperor</h3>
+                        <p>Author: Abadom</p>
+                        <p>Description: Late 21st century, the acclaimed game Company Elden Throne released yet another immersive action MMORPG after a decade of silence.
+
+While the world was getting ready for this new Supermassive MMO, Dale Houston trained his body every day in preparation for its eventual worldwide release.
+
+Not because Dale wanted to get healthy or muscular, but because he saw a glimpse of the secrets hidden by the Megacorporation.
+All because of what he found out one year ago… This time, he wasn’t here to play the game.
+
+He would find all of the secrets, things he couldn’t even imagine…
+
+It wasn’t about the game anymore.</p>
+                    </div>
+                    <div class="book">
+                        <img src="book2.jpg" alt="Book 2" id="fantasy2">
+                        <h3>The Gathering</h3>
+                        <p>Author: FanficMortal</p>
+                        <p>Description: An ordinary soul from Earth mysteriously transmigrates into One Piece World. What's more, he was presented with a Gift Pack from God.
+
+Follow his journey, from being a slave to an extraordinary existence that everyone fears.</p>
+                    </div>
+                `;
+            } else if (selectedGenre === 'Action') {
+                bookList.innerHTML = `
+                    <div class="book">
+                        <img src="book3.jpeg" alt="Book 1" id="action1">
+                        <h3>The Ocean Lord</h3>
+                        <p>Author: 这个海洋领主有点强</p>
+                        <p>Description: From then on, a lord and the aboriginal fear of the sea lord was born!In the boundless ocean, an ocean island became that bright pearl of the ocean.</p>
+                    </div>
+                    <div class="book">
+                        <img src="book4.jpeg" alt="Book 2" id="action2">
+                        <h3>Dragon</h3>
+                        <p>Author: Mr.Arthur</p>
+                        <p>Description: Humanity is decimated and retreats to its last few cities, 
+                            clinging on to survival. However, in the greatest moments of despair, there is hope. The Warriors, 
+                            an elite group of humans who have defeated the monsters and gained powers that bring their abilities beyond that of 
+                            humanity, stand in defence of the species.</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
